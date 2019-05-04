@@ -80,7 +80,9 @@ def main():
     save_name = args.query("save_name")
 
     decrease_size_check = float(args.query_default("check_size", "0"))
-    version_count = int(args.query_default("version_count", "-1"))
+    version_count = int(args.query_default("version_count", "1"))
+
+    assert version_count > 0, "version count must greater than 0"
 
     # prepare file path
     os.makedirs(os.path.join(save_path, "versions"), exist_ok=True)
